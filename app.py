@@ -14,8 +14,6 @@ def read():
     else:
         return "Usuario No Existe"
 
-if __name__ == "main":
-    app.run(debug=True)
 
 @app.route("/create", methods=["POST"])
 def create():
@@ -24,3 +22,15 @@ def create():
         return {"payload":bar}
     else:
         return "Usuario No Existe"
+
+@app.route("/init")
+def init():
+    un_usuario = request.args.get("content")
+
+    if un_usuario == "alfa":
+        return {"payload":un_usuario}
+    else:  return "no esta"
+        
+if __name__ == "main":
+    app.run(debug=True)
+
