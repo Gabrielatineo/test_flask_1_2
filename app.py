@@ -16,3 +16,11 @@ def read():
 
 if __name__ == "main":
     app.run(debug=True)
+
+@app.route("/create", methods=["POST"])
+def create():
+    leer=request.args.get("content")
+    if create == "bar":
+        return {"payload":bar}
+    else:
+        return "Usuario No Existe"
